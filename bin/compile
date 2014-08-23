@@ -241,11 +241,11 @@ export_env_dir "$3"
 
 # Download jq binary for JSON processing
 export PATH="$HOME/bin:$PATH"
-echo $HOME
-echo $PATH
+mkdir "$HOME/bin/jq"
 curl "http://${S3_BUCKET}.s3.amazonaws.com/jq/jq" -L -s -o - > "$HOME/bin/jq"
 echo 'Here'
 chmod +x "$HOME/bin/jq"
+echo 'After'
 
 DEFAULT_PHP="5.5.10"
 DEFAULT_NGINX="1.4.4"
